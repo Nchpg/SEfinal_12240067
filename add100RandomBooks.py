@@ -40,7 +40,6 @@ def removeBook(_id, apiKey):
     r = requests.delete(
         f"{APIHOST}/api/v1/books/{_id}", 
         headers = {
-            "Content-type": "application/json",
             "X-API-Key": apiKey
             },
     )
@@ -57,5 +56,5 @@ apiKey = getAuthToken()
 fake = Faker()
 for i in range(0, 5):
     removeBook(i, apiKey) 
-for i in range(25, 31):
+for i in range(26, 31):
     removeBook(i, apiKey) 
